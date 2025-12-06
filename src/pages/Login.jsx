@@ -139,14 +139,6 @@ const Login = () => {
                                         placeholder="trader@example.com"
                                     />
                                 </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-slate-300 mb-1.5">Password</label>
-                                    <input
-                                        type="password"
-                                        className="glass-input w-full"
-                                        placeholder="••••••••"
-                                    />
-                                </div>
 
                                 <button
                                     type="submit"
