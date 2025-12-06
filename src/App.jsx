@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { StockProvider } from './context/StockContext';
 import Login from './pages/Login';
+import Subscription from './pages/Subscription';
 import Dashboard from './pages/Dashboard';
 import Layout from './components/Layout';
 
@@ -25,6 +26,14 @@ function App() {
         <Router>
           <Routes>
             <Route path="/login" element={<Login />} />
+            <Route
+              path="/subscription"
+              element={
+                <ProtectedRoute>
+                  <Subscription />
+                </ProtectedRoute>
+              }
+            />
             <Route
               path="/"
               element={

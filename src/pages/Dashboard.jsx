@@ -38,8 +38,42 @@ const Dashboard = () => {
 
     return (
         <div className="space-y-8">
-            <div className="-mx-6 -mt-6 mb-6">
+            <div className="-mx-6 -mt-6 mb-8">
                 <Ticker />
+            </div>
+
+            {/* Portfolio Summary */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="glass-card p-6 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <Activity size={48} className="text-blue-500" />
+                    </div>
+                    <p className="text-slate-400 text-sm mb-1">Total Portfolio Value</p>
+                    <h3 className="text-3xl font-bold text-white">$24,593.00</h3>
+                    <p className="text-green-400 text-sm mt-2 flex items-center gap-1">
+                        +2.4% <span className="text-slate-500">today</span>
+                    </p>
+                </div>
+                <div className="glass-card p-6 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <Layers size={48} className="text-purple-500" />
+                    </div>
+                    <p className="text-slate-400 text-sm mb-1">Total Profit/Loss</p>
+                    <h3 className="text-3xl font-bold text-white">+$4,200.50</h3>
+                    <p className="text-green-400 text-sm mt-2 flex items-center gap-1">
+                        +12.8% <span className="text-slate-500">all time</span>
+                    </p>
+                </div>
+                <div className="glass-card p-6 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <Activity size={48} className="text-orange-500" />
+                    </div>
+                    <p className="text-slate-400 text-sm mb-1">Buying Power</p>
+                    <h3 className="text-3xl font-bold text-white">$12,450.00</h3>
+                    <p className="text-slate-500 text-sm mt-2 flex items-center gap-1">
+                        Available to trade
+                    </p>
+                </div>
             </div>
 
             {/* Voice Command FAB */}
@@ -52,8 +86,8 @@ const Dashboard = () => {
                 <button
                     onClick={handleVoiceCommand}
                     className={`p-4 rounded-full shadow-2xl transition-all duration-300 ${isListening
-                            ? 'bg-red-500 animate-pulse scale-110'
-                            : 'bg-blue-600 hover:bg-blue-500 hover:scale-105'
+                        ? 'bg-red-500 animate-pulse scale-110'
+                        : 'bg-blue-600 hover:bg-blue-500 hover:scale-105'
                         }`}
                 >
                     {isListening ? <MicOff size={24} className="text-white" /> : <Mic size={24} className="text-white" />}

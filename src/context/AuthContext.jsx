@@ -17,9 +17,22 @@ export const AuthProvider = ({ children }) => {
     }, []);
 
     const login = (email) => {
-        const userData = { email };
+        // Default to 'free' plan on login if not specified
+        const userData = {
+            email,
+            subscription: 'free',
+            name: email.split('@')[0]
+        };
         setUser(userData);
         localStorage.setItem('stock_broker_user', JSON.stringify(userData));
+    };
+
+    const updateSubscription = (plan) => {
+        if (user) {
+            const updatedUser = { ...user, subscription: plan };
+            setUser(updatedUser);
+            localStorage.setItem('stock_broker_user', JSON.stringify(updatedUser));
+        }
     };
 
     const logout = () => {
@@ -28,7 +41,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ user, login, logout, loading }}>
+        <AuthContext.Provider value={{ user, login, logout, updateSubscription, loading }}>
             {children}
         </AuthContext.Provider>
     );
