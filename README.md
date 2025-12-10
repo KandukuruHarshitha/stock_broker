@@ -1,17 +1,81 @@
-# React + Vite
+# Stock Broker Client Web Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive web dashboard for stock broker clients, built with React and Vite. This application provides users with real-time stock data visualization, subscription management, and a secure authentication system.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   **Authentication**: Secure login system for user access.
+-   **Interactive Dashboard**: Visualize stock data with dynamic charts using Recharts.
+-   **Subscription Management**: Manage user subscriptions and access levels.
+-   **Responsive Design**: Fully responsive interface built with Tailwind CSS.
+-   **Modern UI**: Clean and intuitive user interface with Lucide React icons.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-   **Core**: [React](https://react.dev/), [Vite](https://vitejs.dev/)
+-   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+-   **Routing**: [React Router DOM](https://reactrouter.com/)
+-   **Charts**: [Recharts](https://recharts.org/)
+-   **Icons**: [Lucide React](https://lucide.dev/)
+-   **Utilities**: [clsx](https://github.com/lukeed/clsx), [tailwind-merge](https://github.com/dcastil/tailwind-merge)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# stock_broker
+### Prerequisites
+
+Ensure you have Node.js installed on your machine.
+
+### Installation
+
+1.  Clone the repository:
+    ```bash
+    git clone <repository-url>
+    ```
+2.  Navigate to the project directory:
+    ```bash
+    cd stock-broker-dashboard
+    ```
+3.  Install dependencies:
+    ```bash
+    npm install
+    ```
+
+### Running the Application
+
+To start the development server:
+```bash
+npm run dev
+```
+The application will be available at `http://localhost:5173`.
+
+### Building for Production
+
+To create a production build:
+```bash
+npm run build
+```
+
+### Previewing Production Build
+
+To preview the production build locally:
+```bash
+npm run preview
+```
+
+## Project Structure
+
+```
+src/
+├── components/     # Reusable UI components
+├── context/        # React Context for state management (Auth, Stock)
+├── pages/          # Application pages (Login, Dashboard, Subscription)
+├── App.jsx         # Main application component with routing
+└── main.jsx        # Entry point
+```
+
+## Available Scripts
+
+-   `npm run dev`: Starts the development server.
+-   `npm run build`: Builds the app for production.
+-   `npm run lint`: Runs ESLint to check for code quality issues.
+-   `npm run preview`: Previews the production build.
